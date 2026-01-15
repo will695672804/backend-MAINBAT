@@ -1,0 +1,28 @@
+spring:
+  # PostgreSQL Database for Production
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/mainbat}
+    username: ${DATABASE_USERNAME:mainbat}
+    password: ${DATABASE_PASSWORD:mainbat123}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 5
+      idle-timeout: 300000
+      connection-timeout: 20000
+  
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+# Production Logging
+logging:
+  level:
+    root: WARN
+    com.mainbat: INFO
+  file:
+    name: logs/mainbat.log

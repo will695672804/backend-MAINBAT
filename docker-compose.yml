@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: mainbat-db
+    environment:
+      POSTGRES_DB: mainbat
+      POSTGRES_USER: mainbat
+      POSTGRES_PASSWORD: mainbat123
+    ports:
+      - "5432:5432"
+    volumes:
+      - mainbat_data:/var/lib/postgresql/data
+    networks:
+      - mainbat-network
+
+  # Optional: pgAdmin for database management
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: mainbat-pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@mainbat.com
+      PGADMIN_DEFAULT_PASSWORD: admin123
+    ports:
+      - "5050:80"
+    depends_on:
+      - postgres
+    networks:
+      - mainbat-network
+
+volumes:
+  mainbat_data:
+
+networks:
+  mainbat-network:
+    driver: bridge
